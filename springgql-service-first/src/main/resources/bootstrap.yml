@@ -1,0 +1,13 @@
+server:
+  port: 2021
+
+spring:
+  application:
+    name: springgql-service-first
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml

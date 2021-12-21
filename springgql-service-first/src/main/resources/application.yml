@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+
+graphql:
+  servlet:
+    mapping: /first/graphql
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.gql.springcloud.entities
