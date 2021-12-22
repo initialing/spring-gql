@@ -1,4 +1,21 @@
 
+
+type User {
+    id: Int!
+    account: String!
+    password: String!
+}
+
+type CommonResult {
+    code: Int!
+    description: String!
+}
+
 type Query {
     hello: String!
+    signIn(account: String!, password: String!): User!
+}
+
+type Mutation {
+    changePassword(account: String!, password: String!): CommonResult!
 }
