@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.gql.springcloud.dao.UserDao">
-    <insert id="signUp" keyProperty="id" useGeneratedKeys="true" parameterType="com.gql.springcloud.entities.User">
+    <insert id="signUp" keyProperty="id" useGeneratedKeys="true" parameterType="com.gql.springcloud.entities.Account">
         INSERT INTO users (account, password) values (#{user.account}, #{user.password});
     </insert>
 
-    <select id="signIn" resultType="com.gql.springcloud.entities.User">
+    <select id="signIn" resultType="com.gql.springcloud.entities.Account">
         select id, account, password from users where account=#{account} and password=#{password};
     </select>
 

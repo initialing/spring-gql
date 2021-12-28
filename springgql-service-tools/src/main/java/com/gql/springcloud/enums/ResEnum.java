@@ -1,7 +1,9 @@
 package com.gql.springcloud.enums;
 
 public enum ResEnum {
-    SUCCESS(200,"success");
+    SUCCESS(200,"success"),
+    UNAUTH(401,"unauthorized"),
+    AUTH_FAIL(402, "authorized fail");
 
     private String des;
     private Integer code;

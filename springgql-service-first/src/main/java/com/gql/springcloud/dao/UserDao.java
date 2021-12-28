@@ -1,14 +1,14 @@
 package com.gql.springcloud.dao;
 
-import com.gql.springcloud.entities.User;
+import com.gql.springcloud.entities.Account;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserDao {
-    public int signUp(@Param("user")User user);
+    public int signUp(@Param("user") Account user);
 
-    public User signIn(@Param("account") String account, @Param("password") String password);
+    public Account signIn(@Param("account") String account, @Param("password") String password);
 
     public int changePassword(@Param("account") String account, @Param("password") String password);
 }

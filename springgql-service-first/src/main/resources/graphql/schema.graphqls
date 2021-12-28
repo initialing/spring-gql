@@ -1,6 +1,6 @@
 
 
-type User {
+type Account {
     id: Int!
     account: String!
     password: String!
@@ -13,7 +13,7 @@ type CommonResult {
 
 type Query {
     hello: String!
-    signIn(account: String!, password: String!): User!
+    signIn(account: String!, password: String!): Account!
 }
 
 type Mutation {

@@ -1,16 +1,20 @@
 package com.gql.springcloud.entities;
 
+
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class JWTModel {
+
     private Integer id;
 
-    private String account;
+    private String userName;
 
-    private String password;
+    private List<String> authorities;
 }
