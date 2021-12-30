@@ -9,6 +9,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.compression.CompressionCodecs;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,7 @@ import java.util.Map;
 @Component
 public class JWTCenter {
 
-    private static long expireTime = 60 * 60 * 1000;
+    private static long expireTime = 12L * 60L * 60L * 1000;
 
     private static String key = "gz8wk72mo25bglgooa1a97cnnojcjsj";
 

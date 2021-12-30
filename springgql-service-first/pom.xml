@@ -79,7 +79,7 @@
 
         <dependency>
             <groupId>com.gql.springcloud</groupId>
-            <artifactId>springgql-service-tools</artifactId>
+            <artifactId>springgql-service-security</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

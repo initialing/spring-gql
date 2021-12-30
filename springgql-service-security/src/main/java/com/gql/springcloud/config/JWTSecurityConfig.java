@@ -20,11 +20,14 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 public class JWTSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-    @Autowired
     private UnauthGuard unauthGuard;
 
-    @Autowired
     private UnauthAccessDenied unauthAccessDenied;
+
+    public JWTSecurityConfig(UnauthGuard unauthGuard, UnauthAccessDenied unauthAccessDenied){
+        this.unauthGuard = unauthGuard;
+        this.unauthAccessDenied = unauthAccessDenied;
+    }
 
 
     @Bean

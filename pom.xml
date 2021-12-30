@@ -11,6 +11,8 @@
     <modules>
         <module>springgql-service-first</module>
         <module>springgql-service-tools</module>
+        <module>springgql-service-security</module>
+        <module>springgql-service-gateway</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -23,7 +23,7 @@ public class Strokes {
     @Resource
     private UserService userService;
 
-    @GetMapping("/test")
+    @GetMapping("/first/test")
     @PreAuthorize("hasAuthority('admin')")
     public String test(HttpServletRequest request){
         return configInfo + request.getAttribute("userName").toString();
