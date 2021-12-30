@@ -13,3 +13,5 @@ Spring cloud Alibaba 2.2.7.RELEASE
 graphql spring boot starter 11.1.0
 
 spring security
+
+spring gateway
