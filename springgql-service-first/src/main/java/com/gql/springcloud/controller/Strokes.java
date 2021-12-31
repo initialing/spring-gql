@@ -1,7 +1,10 @@
 package com.gql.springcloud.controller;
 
 import com.gql.springcloud.entities.Account;
+import com.gql.springcloud.entities.CommonResult;
+import com.gql.springcloud.enums.ResEnum;
 import com.gql.springcloud.service.UserService;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RefreshScope
@@ -23,15 +27,20 @@ public class Strokes {
     @Resource
     private UserService userService;
 
+    @GetMapping("/first/hello")
+    public String hello(){
+        return "hello";
+    }
+
     @GetMapping("/first/test")
     @PreAuthorize("hasAuthority('admin')")
-    public String test(HttpServletRequest request){
-        return configInfo + request.getAttribute("userName").toString();
+    public CommonResult test(HttpServletRequest request){
+        return new CommonResult(ResEnum.SUCCESS.getCode(), ResEnum.SUCCESS.getDes(), configInfo + " " + request.getAttribute("userName").toString());
     }
 
     @PostMapping("/first/signup")
-    public Account signUp(@RequestBody Account user){
+    public CommonResult signUp(@RequestBody Account user){
         userService.signUp(user);
-        return user;
+        return new CommonResult(ResEnum.SUCCESS.getCode(), ResEnum.SUCCESS.getDes());
     }
 }

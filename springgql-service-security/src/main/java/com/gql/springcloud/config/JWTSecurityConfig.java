@@ -45,7 +45,7 @@ public class JWTSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 拦截规则
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**/graphql", "/test").permitAll()
+                .antMatchers("/**/graphql", "/first/**").permitAll()
                 .anyRequest().authenticated()
                 // 未授权处理
                 .and()
